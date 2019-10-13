@@ -6,7 +6,7 @@ stages{
     stage ('Compile Stage'){
         steps{
             withMaven(maven : 'Maven_3.5.2') {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
     }
@@ -14,14 +14,14 @@ stages{
     stage('Testing Stage'){
         steps{
             withMaven(maven : 'Maven_3.5.2') {
-            sh 'mvn test'
+            bat 'mvn test'
             }
         }
     }
     stage('Installation'){
             steps{
                 withMaven(maven : 'Maven_3.5.2') {
-                sh 'mvn install'
+                bat 'mvn install'
                 }
             }
         }
